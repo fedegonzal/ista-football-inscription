@@ -7,7 +7,7 @@
     const reactTo = ["+1", "+ 1"];
 
     // The reaction to send. We accept emojis too!!
-    const reaction = "+1";
+    const reaction = "+1 ⚽️";
     
     // This variable will help us to avoid sending the reaction multiple times
     let reacted = false;
