@@ -12,6 +12,9 @@
     // This variable will help us to avoid sending the reaction multiple times
     let reacted = false;
 
+    // Check for new messages every 2 second
+    const monitor = setInterval(checkLastMessage, 2 * 1000);
+
     function sendMessage(text) {
         // Find the message input box
         const messageBox = document.querySelector(
@@ -39,7 +42,10 @@
                     'span[data-icon="send"]'
                 );
                 if (sendButton) sendButton.click();
-            }, 100);
+
+                // Let's free the monitor
+                clearInterval(monitor);
+            }, 200);
         }
     }
 
@@ -60,6 +66,4 @@
         }
     }
 
-    // Check for new messages every 2 second
-    setInterval(checkLastMessage, 2 * 1000);
 })();
